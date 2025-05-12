@@ -2,7 +2,13 @@
 # Phylogenetic Analysis with MEGA
 
 ## Description
-This project used MEGA X to construct a phylogenetic tree based on bacterial 16S rRNA sequences. Alignment was performed using ClustalW, and the tree was built using the Neighbor-Joining method with 1000 bootstrap replications.
+
+This project compares four phylogenetic tree-building methods to evaluate their effectiveness in determining evolutionary relationships among bacterial 16S rRNA sequences: Neighbor-Joining (NJ), Maximum Likelihood (ML), Maximum Parsimony (MP), and UPGMA.
+Methods Overview:
+Neighbor-Joining (NJ): A distance-based method that groups taxa by minimizing branch lengths. Fast and simple but less statistically robust than ML.
+Maximum Likelihood (ML): Estimates the tree topology that is most likely based on the data and evolutionary model. It’s statistically robust, especially for complex datasets.
+Maximum Parsimony (MP): Seeks the tree with the fewest evolutionary changes. Effective for simpler data but less reliable for more complex relationships.
+UPGMA: Assumes a constant rate of evolution and constructs a hierarchical tree based on pairwise distances. Less reliable if the molecular clock assumption is violated.
 
 ## Tools
 - MEGA X
