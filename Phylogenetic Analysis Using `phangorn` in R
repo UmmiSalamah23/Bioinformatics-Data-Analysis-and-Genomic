@@ -46,10 +46,7 @@ fun2 <- function(x) nj(dist.ml(x))
 bs_nj <- bootstrap.phyDat(primates, fun2)
 plotBS(treeNJ, bs_nj, main="NJ with Bootstrap")
 ```
-## Interpretation:
-Different outgroups: UPGMA = Mouse, NJ = Bovine
-Indicates different evolutionary perspectives depending on method
-Bootstrap support: Higher in NJ tree, suggesting stronger support and more consistency across resampling
+
 
 ## Part B: Character-Based Method (Parsimony)
 Calculate parsimony scores:
@@ -73,6 +70,17 @@ if(inherits(treeRatchet, "multiPhylo")){
 plotBS(midpoint(treeRatchet), type="phylogram")
 add.scale.bar()
 ```
-## Interpretation:
-Outgroup: Bovine — based on minimum evolutionary changes
-Bootstrap value: Indicates how many times a branch was recovered during 100 resampling iterations (e.g., 0.66 = 66 times)
+## Interpretation
+
+The phylogenetic trees reconstructed using UPGMA, NJ, and Parsimony show similar overall topologies, with some variation in branching order and outgroup placement.
+
+- **UPGMA** assumes a molecular clock and thus builds a **rooted** tree. It selected *Mouse* as an outgroup, possibly due to consistent evolutionary distances across taxa. However, this assumption may not hold in real biological data.
+  
+- **NJ**, a more flexible distance-based method, produced an **unrooted** tree with *Bovine* as an outgroup. This indicates it detected more sequence similarity between the primates and other taxa than UPGMA.
+
+- **Bootstrap analysis** shows higher support in the NJ tree, suggesting it is more stable across replicates and thus more reliable.
+
+- **Parsimony analysis** yielded a tree with the lowest number of evolutionary changes (score = 746), suggesting it may better reflect the minimum number of mutations needed to explain the observed data. The tree optimization (acctran) helped resolve ambiguous branches.
+
+Overall, NJ with bootstrap support appears to be the most informative and consistent approach for this dataset.
+
