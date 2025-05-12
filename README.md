@@ -29,5 +29,4 @@ This project used MEGA X to construct a phylogenetic tree based on bacterial 16S
 4. **Export and upload the tree**: Export the resulting tree and upload it to the GitHub repository.
 
 
-## Reference
-- *MEGA X Documentation*
+
