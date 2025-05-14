@@ -24,7 +24,8 @@ Methods Overview:
 
 ### Neighbor Joining Tree
 
-![Uploading Screenshot 2025-05-14 at 2.05.44 PM.png…]()
+<img width="702" alt="Screenshot 2025-05-15 at 12 29 49 AM" src="https://github.com/user-attachments/assets/40a1d6c8-7dfb-4ca8-b205-5345eaa3a8e4" />
+
 
 ### UPGMA Tree
 
