@@ -1,0 +1,94 @@
+# Phylogenetic Analysis Using `phangorn` in R
+
+This repository contains an example of phylogenetic analysis using the R package `phangorn`. The analysis covers both distance-based and character-based methods (NJ, UPGMA, Parsimony), including bootstrap evaluation and tree comparison.
+
+---
+
+## Requirements
+
+Make sure you have the following R packages installed:
+
+````r
+install.packages("ape")
+install.packages("phangorn")
+install.packages("igraph") # optional, used in some visualizations
+
+
+## Step 1: Load Data
+
+We begin by loading the required packages and reading the DNA alignment data (`primates.dna`) included in the `phangorn` package.
+
+library(ape)
+library(phangorn)
+
+fdir <- system.file("extdata/trees", package = "phangorn")
+primates <- read.phyDat(file.path(fdir, "primates.dna"), format = "interleaved")
+
+## Step 2: Reconstruct Trees (Distance-Based)
+Create a distance matrix using dist.ml(), then build trees using UPGMA and Neighbor Joining (NJ) methods.
+```r
+dm <- dist.ml(primates)
+treeUPGMA <- upgma(dm)
+treeNJ <- NJ(dm)
+````
+
+## Step 3: Visualize Trees
+
+```r
+plot(treeUPGMA, main="UPGMA Tree")       # Rooted
+plot(treeNJ, main="Neighbor Joining Tree")  # Unrooted
+```
+
+## Step 4: Bootstrap Analysis
+
+```r
+Bootstrap for UPGMA Tree:
+fun <- function(x) upgma(dist.ml(x))
+bs_upgma <- bootstrap.phyDat(primates, fun)
+plotBS(treeUPGMA, bs_upgma, main="UPGMA with Bootstrap")
+Bootstrap for NJ Tree:
+fun2 <- function(x) nj(dist.ml(x))
+bs_nj <- bootstrap.phyDat(primates, fun2)
+plotBS(treeNJ, bs_nj, main="NJ with Bootstrap")
+```
+
+## Part B: Character-Based Method (Parsimony)
+
+Calculate parsimony scores:
+parsimony(treeUPGMA, primates)  # \[1] 751
+parsimony(treeNJ, primates)     # \[1] 746
+
+Construct Parsimony Tree with pratchet:
+
+```r
+treeRatchet <- pratchet(primates, trace = 0, minit = 100)
+parsimony(treeRatchet, primates)  # [1] 746
+Finalize the tree (optimize branch lengths and remove zero-length edges):
+treeRatchet <- acctran(treeRatchet, primates)
+treeRatchet <- di2multi(treeRatchet)
+
+if(inherits(treeRatchet, "multiPhylo")){
+  treeRatchet <- unique(treeRatchet)
+}
+```
+
+## Visualize Parsimony Tree with Bootstrap Support:
+
+```r
+plotBS(midpoint(treeRatchet), type="phylogram")
+add.scale.bar()
+```
+
+## Interpretation
+
+The phylogenetic trees reconstructed using UPGMA, NJ, and Parsimony show similar overall topologies, with some variation in branching order and outgroup placement.
+
+* **UPGMA** assumes a molecular clock and thus builds a **rooted** tree. It selected *Mouse* as an outgroup, possibly due to consistent evolutionary distances across taxa. However, this assumption may not hold in real biological data.
+
+* **NJ**, a more flexible distance-based method, produced an **unrooted** tree with *Bovine* as an outgroup. This indicates it detected more sequence similarity between the primates and other taxa than UPGMA.
+
+* **Bootstrap analysis** shows higher support in the NJ tree, suggesting it is more stable across replicates and thus more reliable.
+
+* **Parsimony analysis** yielded a tree with the lowest number of evolutionary changes (score = 746), suggesting it may better reflect the minimum number of mutations needed to explain the observed data. The tree optimization (acctran) helped resolve ambiguous branches.
+
+Overall, NJ with bootstrap support appears to be the most informative and consistent approach for this dataset.
