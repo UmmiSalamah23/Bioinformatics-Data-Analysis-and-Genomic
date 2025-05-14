@@ -1,4 +1,3 @@
-<img width="712" alt="Screenshot 2025-05-14 at 2 05 44 PM" src="https://github.com/user-attachments/assets/6ee5fd0c-1a84-4f3c-9906-bc60bfb2742d" />
 # Phylogenetic Analysis with MEGA
 
 ## Description
@@ -17,13 +16,18 @@ Methods Overview:
 
 ## Output
 ### Maximum Likelihood Tree
+
 <img width="713" alt="Screenshot 2025-05-14 at 2 07 01 PM" src="https://github.com/user-attachments/assets/c02d907d-15b2-4620-9cc7-35dd9c7205b3" />
+
 ### Maximum Parsimony Tree
 ![Uploading Screenshot 2025-05-14 at 2.09.52 PM.png…]()
 
 ### Neighbor Joining Tree
+
 ![Uploading Screenshot 2025-05-14 at 2.05.44 PM.png…]()
+
 ### UPGMA Tree
+
 <img width="710" alt="Screenshot 2025-05-14 at 2 08 58 PM" src="https://github.com/user-attachments/assets/810cb631-c3c3-41ac-b5a0-68f804f14a6a" />
 
 ## Steps
