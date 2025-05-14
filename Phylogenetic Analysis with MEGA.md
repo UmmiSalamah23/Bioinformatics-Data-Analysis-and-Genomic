@@ -1,4 +1,4 @@
-
+<img width="712" alt="Screenshot 2025-05-14 at 2 05 44 PM" src="https://github.com/user-attachments/assets/6ee5fd0c-1a84-4f3c-9906-bc60bfb2742d" />
 # Phylogenetic Analysis with MEGA
 
 ## Description
@@ -17,16 +17,14 @@ Methods Overview:
 
 ## Output
 ### Maximum Likelihood Tree
-![Maximum Likelihood](https://github.com/user-attachments/assets/a6642d5a-14f6-4176-8725-1293a5891279)
-
+<img width="713" alt="Screenshot 2025-05-14 at 2 07 01 PM" src="https://github.com/user-attachments/assets/c02d907d-15b2-4620-9cc7-35dd9c7205b3" />
 ### Maximum Parsimony Tree
-![Maximum Parsimony](https://github.com/user-attachments/assets/6cfde645-5903-46a2-b0a2-7db84b4d197b)
+![Uploading Screenshot 2025-05-14 at 2.09.52 PM.png…]()
 
 ### Neighbor Joining Tree
-![Neighbor Joining Trees](https://github.com/user-attachments/assets/67b9cacb-4b0e-4691-a900-9a8cbefffb0e)
-
+![Uploading Screenshot 2025-05-14 at 2.05.44 PM.png…]()
 ### UPGMA Tree
-![UPGMA](https://github.com/user-attachments/assets/18377e54-d89e-4c78-a133-de0fd2b6f3d6)
+<img width="710" alt="Screenshot 2025-05-14 at 2 08 58 PM" src="https://github.com/user-attachments/assets/810cb631-c3c3-41ac-b5a0-68f804f14a6a" />
 
 ## Steps
 1. **Import sequences into MEGA**: Import bacterial 16S rRNA sequences into MEGA X.
