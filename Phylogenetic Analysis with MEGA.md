@@ -20,7 +20,7 @@ Methods Overview:
 <img width="713" alt="Screenshot 2025-05-14 at 2 07 01 PM" src="https://github.com/user-attachments/assets/c02d907d-15b2-4620-9cc7-35dd9c7205b3" />
 
 ### Maximum Parsimony Tree
-![Uploading Screenshot 2025-05-14 at 2.09.52 PM.png…]()
+![image](https://github.com/user-attachments/assets/5c9209a5-92b6-4ff7-b4f5-09221e91b709)
 
 ### Neighbor Joining Tree
 
