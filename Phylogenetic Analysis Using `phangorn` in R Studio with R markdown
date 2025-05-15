@@ -12,7 +12,7 @@ Make sure you have the following R packages installed:
 install.packages("ape")
 install.packages("phangorn")
 install.packages("igraph") # optional, used in some visualizations
-
+```
 
 ## Step 1: Load Data
 
@@ -26,6 +26,7 @@ primates <- read.phyDat(file.path(fdir, "primates.dna"), format = "interleaved")
 
 ## Step 2: Reconstruct Trees (Distance-Based)
 Create a distance matrix using dist.ml(), then build trees using UPGMA and Neighbor Joining (NJ) methods.
+
 ```r
 dm <- dist.ml(primates)
 treeUPGMA <- upgma(dm)
